@@ -13,7 +13,6 @@ const TodoList = () => {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(todos);
   };
 
   const completeTodo = (id) => {
@@ -30,23 +29,27 @@ const TodoList = () => {
     let updatedTodo = todos.filter((todo)=> todo.id !== id)
     setTodos(updatedTodo)
   }
-  const editTodo = (id,text) => {
-    console.log('as')
 
+  const updateTodo = (id,newText) => {
+    if (!newText|| /^\s*$/.test(newText)) {
+        return ;
+      }
+  
+      setTodos(prev=>prev.map(todo =>( todo.id === id ? todo.text=newText : todo )))
   }
 
 
 
 
   return (
-    <div>
+    <div >
       <h1>What's the Plane for Today?</h1>
       <TodoForm addTodo={addTodo} />
       <Todo
         todos={todos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
-        editTodo={editTodo}
+        updateTodo={updateTodo}
       />
     </div>
   );
