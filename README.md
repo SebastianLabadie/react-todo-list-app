@@ -1,4 +1,4 @@
-# Weather App
+# Todo app
 A simple todo list app made with react
 
 # Live Demo
