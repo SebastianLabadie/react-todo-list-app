@@ -1,7 +1,7 @@
 # Weather App
 A simple todo list app made with react
 
-#Live Demo
+# Live Demo
 visit live demo at <https://sebastianlabadie.github.io/react-todo-list-app/>
 
 ![](screenshot.png)
